@@ -1,0 +1,34 @@
+{
+  "ORD1001": {
+    "order_id": "ORD1001",
+    "item": "Wireless Headphones",
+    "status": "Shipped",
+    "eta": "2026-08-15",
+    "carrier": "FedEx",
+    "tracking_number": "FX99213847"
+  },
+  "ORD1002": {
+    "order_id": "ORD1002",
+    "item": "Running Shoes - Size 10",
+    "status": "Processing",
+    "eta": "2026-08-19",
+    "carrier": null,
+    "tracking_number": null
+  },
+  "ORD1003": {
+    "order_id": "ORD1003",
+    "item": "Coffee Maker",
+    "status": "Delivered",
+    "eta": "2026-08-10",
+    "carrier": "UPS",
+    "tracking_number": "1Z999AA10123456784"
+  },
+  "ORD1004": {
+    "order_id": "ORD1004",
+    "item": "Yoga Mat",
+    "status": "Delayed",
+    "eta": "2026-08-22",
+    "carrier": "USPS",
+    "tracking_number": "9400111899223197428"
+  }
+}
