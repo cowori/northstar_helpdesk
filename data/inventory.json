@@ -1,0 +1,37 @@
+{
+  "wireless headphones": {
+    "sku": "SKU-2001",
+    "name": "Wireless Headphones",
+    "in_stock": true,
+    "quantity": 42,
+    "restock_date": null
+  },
+  "running shoes": {
+    "sku": "SKU-2002",
+    "name": "Running Shoes",
+    "in_stock": false,
+    "quantity": 0,
+    "restock_date": "2026-08-20"
+  },
+  "coffee maker": {
+    "sku": "SKU-2003",
+    "name": "Coffee Maker",
+    "in_stock": true,
+    "quantity": 8,
+    "restock_date": null
+  },
+  "yoga mat": {
+    "sku": "SKU-2004",
+    "name": "Yoga Mat",
+    "in_stock": false,
+    "quantity": 0,
+    "restock_date": "2026-08-25"
+  },
+  "desk lamp": {
+    "sku": "SKU-2005",
+    "name": "Desk Lamp",
+    "in_stock": true,
+    "quantity": 15,
+    "restock_date": null
+  }
+}
