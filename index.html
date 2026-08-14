@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Northstar Retail - Self-Serve Support</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Top Navigation Header -->
+    <header class="navbar">
+      <div class="logo">Northstar Retail Support</div>
+      <span class="status-badge">Help Center</span>
+    </header>
+
+    <!-- Main Container -->
+    <main class="main-container">
+      <!-- Hero / Welcome Banner -->
+      <section class="welcome-banner">
+        <h1>How can we help you today?</h1>
+        <p>
+          Get instant answers to order status, returns, and stock questions
+          before submitting a ticket.
+        </p>
+      </section>
+
+      <!-- Chat Widget Section (This is what Person C works with!) -->
+      <section class="chat-card">
+        <div class="chat-header">
+          <span class="dot online"></span>
+          <h2>Support Assistant</h2>
+        </div>
+
+        <!-- Scrollable Message Window -->
+        <div id="chat-window" class="chat-window">
+          <!-- Default Welcome Message -->
+          <div class="message bot-message">
+            Hello! I'm the Northstar Assistant. How can I help you with your
+            order, returns, or stock today?
+          </div>
+        </div>
+
+        <!-- Chat Input Form -->
+        <form id="chat-form" class="chat-input-area">
+          <input
+            type="text"
+            id="chat-input"
+            placeholder="Type 'Where is my order?' or 'How do I return an item?'..."
+            required
+            autocomplete="off"
+          />
+          <button type="submit" id="send-btn">Send</button>
+        </form>
+      </section>
+    </main>
+
+    <!-- Link JavaScript -->
+    <script src="app.js"></script>
+  </body>
+</html>
