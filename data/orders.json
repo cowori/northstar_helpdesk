@@ -1,0 +1,58 @@
+[
+  {
+    "orderId": "NS1001",
+    "email": "mary@example.com",
+    "status": "Shipped",
+    "estimatedArrival": "2026-08-16",
+    "trackingNumber": "DHL123456789"
+  },
+  {
+    "orderId": "NS1002",
+    "email": "john@example.com",
+    "status": "Delivered",
+    "estimatedArrival": "2026-08-12",
+    "trackingNumber": "FDX987654321"
+  },
+  {
+    "orderId": "NS1003",
+    "email": "sarah@example.com",
+    "status": "Being Packed",
+    "estimatedArrival": "2026-08-18",
+    "trackingNumber": null
+  },
+  {
+    "orderId": "NS1004",
+    "email": "david@example.com",
+    "status": "Shipped",
+    "estimatedArrival": "2026-08-17",
+    "trackingNumber": "UPS456789123"
+  },
+  {
+    "orderId": "NS1005",
+    "email": "anna@example.com",
+    "status": "Delayed",
+    "estimatedArrival": "2026-08-20",
+    "trackingNumber": "DHL789123456"
+  },
+  {
+    "orderId": "NS1006",
+    "email": "michael@example.com",
+    "status": "Delivered",
+    "estimatedArrival": "2026-08-13",
+    "trackingNumber": "UPS321654987"
+  },
+  {
+    "orderId": "NS1007",
+    "email": "lisa@example.com",
+    "status": "Being Packed",
+    "estimatedArrival": "2026-08-19",
+    "trackingNumber": null
+  },
+  {
+    "orderId": "NS1008",
+    "email": "daniel@example.com",
+    "status": "Shipped",
+    "estimatedArrival": "2026-08-15",
+    "trackingNumber": "DHL654987321"
+  }
+]
