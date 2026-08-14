@@ -1,9 +1,11 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 import json
 import os
+import sys
+sys.path.append(os.path.join(os.path.dirname(__file__), ".."))
+from router import classify_message
 
 app = Flask(__name__)
-
 DATA_DIR = os.path.join(os.path.dirname(__file__), "..", "data")
 
 def load_json(filename):
@@ -27,5 +29,39 @@ def stock_check(item_name):
         return jsonify({"error": "Item not found"}), 404
     return jsonify(item)
 
+@app.route("/api/chat", methods=["POST"])
+def chat():
+    user_message = request.json.get("message", "")
+    result = classify_message(user_message)
+    intent = result["intent"]
+    value = result["value"]
+
+    if intent == "order_status":
+        orders = load_json("orders.json")
+        order = orders.get(value.upper()) if value else None
+        if order:
+            reply = f"Your order {order['order_id']} is currently: {order['status']} (ETA: {order['eta']})"
+        else:
+            reply = "I couldn't find that order. Can you double-check the order ID?"
+
+    elif intent == "stock_check":
+        inventory = load_json("inventory.json")
+        item = inventory.get(value.lower()) if value else None
+        if item:
+            if "in_stock" in item:
+                in_stock = item["in_stock"]
+            elif "quantity" in item:
+                in_stock = item["quantity"] > 0
+            else:
+                in_stock = True
+            reply = f"Yes, {value} is in stock." if in_stock else f"Sorry, {value} is currently out of stock."
+        else:
+            reply = "I couldn't find that item. Can you tell me the exact product name?"
+
+    else:
+        reply = "I'm not sure I understood - try asking about an order status or item stock."
+
+    return jsonify({"reply": reply})
+
 if __name__ == "__main__":
-    app.run(debug=True, port=5000)
+    app.run(debug=True, port=3000)
