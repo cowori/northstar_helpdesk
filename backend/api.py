@@ -1,17 +1,23 @@
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, send_from_directory
 import json
 import os
 import sys
 sys.path.append(os.path.join(os.path.dirname(__file__), ".."))
 from router import classify_message
 
-app = Flask(__name__)
-DATA_DIR = os.path.join(os.path.dirname(__file__), "..", "data")
+ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+DATA_DIR = os.path.join(ROOT_DIR, "data")
+
+app = Flask(__name__, static_folder=ROOT_DIR, static_url_path="")
 
 def load_json(filename):
     path = os.path.join(DATA_DIR, filename)
     with open(path, "r") as f:
         return json.load(f)
+
+@app.route("/")
+def serve_index():
+    return send_from_directory(ROOT_DIR, "index.html")
 
 @app.route("/api/order-status/<order_id>")
 def order_status(order_id):

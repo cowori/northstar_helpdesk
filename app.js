@@ -30,7 +30,7 @@ chatForm.addEventListener("submit", async (e) => {
   // TODO (PERSON C): CONNECT TO PERSON B'S BACKEND CHAT ENDPOINT
   // -------------------------------------------------------------
   try {
-    const response = await fetch("http://localhost:3000/api/chat", {
+    const response = await fetch("/api/chat", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ message: userText }),
